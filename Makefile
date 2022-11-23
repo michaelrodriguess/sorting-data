@@ -1,4 +1,4 @@
-SRCS			= ./srcs/test-push.c \
+SRCS			= ./srcs/main.c \
 				  ./srcs/ft_buildstack.c \
 				  ./srcs/ft_operations.c \
 
