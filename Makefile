@@ -2,6 +2,7 @@ SRCS			= ./srcs/main.c \
 				  ./srcs/ft_checks.c \
 				  ./srcs/operations/ft_buildstack.c \
 				  ./srcs/operations/ft_swap.c \
+				  ./srcs/operations/ft_push.c \
 
 
 NAME			= push_swap

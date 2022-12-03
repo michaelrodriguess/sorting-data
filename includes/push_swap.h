@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:08:49 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/01 18:20:14 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:48:46 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	ft_stackadd_front(t_stack **stack, t_stack *new_stack);
 void	check_isdigit(char **argv, int argc);
 void	check_duplicate_number(t_stack *stack);
 void	ft_swap(t_stack **stack);
+t_stack	*ft_push(t_stack *stack_src, t_stack *stack_dest);
 
 #endif

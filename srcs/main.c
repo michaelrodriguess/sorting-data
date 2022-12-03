@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:33:03 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/02 14:51:30 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/03 15:03:01 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void print_stack(t_stack *stack)
 {
-	while (stack)
+	while (stack != NULL)
 	{
 		ft_printf("    %d\n", stack->number);
 		stack = stack->next;
@@ -24,11 +24,11 @@ void print_stack(t_stack *stack)
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
-//	t_stack *stack_b;
+	t_stack *stack_b;
 	int i;
 
 	i = 1;
-//	stack_b = NULL;	
+	stack_b = NULL;	
 	check_isdigit(argv, argc);
 	while (i > 0 && i < argc)
 	{	
@@ -36,7 +36,11 @@ int main(int argc, char **argv)
 		i++;
 	}
 	check_duplicate_number(stack_a);
-	ft_swap(&stack_a);
+	stack_b = ft_push(stack_a, stack_b);
+	//ft_swap(&stack_a);
+	ft_printf(" STACK A\n");
 	print_stack(stack_a);
+	ft_printf(" STACK B\n");
+	print_stack(stack_b);
 }
 
