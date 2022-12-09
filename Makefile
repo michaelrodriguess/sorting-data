@@ -1,8 +1,12 @@
 SRCS			= ./srcs/main.c \
-				  ./srcs/ft_checks.c \
-				  ./srcs/operations/ft_buildstack.c \
 				  ./srcs/operations/ft_swap.c \
 				  ./srcs/operations/ft_push.c \
+				  ./srcs/operations/ft_rotate.c \
+				  ./srcs/checks/ft_check_argv.c \
+				  ./srcs/checks/ft_free_matriz.c \
+				  ./srcs/checks/ft_print_error.c \
+				  ./srcs/buildstack/ft_buildstack.c \
+				  ./srcs/buildstack/ft_functions_stack.c \
 
 
 NAME			= push_swap
