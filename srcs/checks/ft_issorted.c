@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_error.c                                   :+:      :+:    :+:   */
+/*   ft_issorted.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/10 15:26:14 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:15 by microdri         ###   ########.fr       */
+/*   Created: 2022/12/10 14:31:53 by microdri          #+#    #+#             */
+/*   Updated: 2022/12/10 15:26:06 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_print_error(void)
+int	ft_issorted(t_stack *stack)
 {
-	ft_putstr_fd("error\n", 2);
-	exit(0);
+	t_stack *temp;
+
+	temp = NULL;
+	while (stack->next != NULL)
+	{
+		temp = stack->next;
+		if (temp->number > stack->number)
+		{
+			temp = temp->next;
+			stack = stack->next;
+		}
+		else
+			return(0);
+	}
+	return (1);
 }
+

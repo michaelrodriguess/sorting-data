@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_error.c                                   :+:      :+:    :+:   */
+/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/10 15:26:14 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:15 by microdri         ###   ########.fr       */
+/*   Created: 2022/12/10 17:03:06 by microdri          #+#    #+#             */
+/*   Updated: 2022/12/10 17:22:05 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_print_error(void)
+void	ft_reverse_rotate(t_stack **stack)
 {
-	ft_putstr_fd("error\n", 2);
-	exit(0);
+	t_stack *temp_value;
+	t_stack *previous_value;
+	
+	temp_value = *stack; 
+	while (temp_value->next != NULL)
+	{
+		previous_value = temp_value; 
+		temp_value = temp_value->next;
+	}
+	previous_value->next = NULL;
+	temp_value->next = *stack;
+	*stack = temp_value;
 }

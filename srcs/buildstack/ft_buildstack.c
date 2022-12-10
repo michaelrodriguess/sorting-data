@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/07 19:32:25 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:26:32 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,4 @@ t_stack *ft_build_stack(char **argv)
 	}
 	return (stack_a);
 }
+

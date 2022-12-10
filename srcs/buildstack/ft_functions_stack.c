@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buildstack.c                                    :+:      :+:    :+:   */
+/*   ft_functions_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/07 19:32:25 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:26:41 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,11 @@ t_stack	*ft_stacknew(long n)
 
 	if (n < -2147483648 || n > 2147483647)
 		ft_print_error();
-//	{
-//		ft_putstr_fd("error\n", 2);
-//		exit (0);	
-//	}
 	newstack_node = malloc(sizeof(t_stack));
 	if (newstack_node == NULL)
 		return (0);
 	newstack_node->number = n;
 	newstack_node->next = NULL;
-//if (newstack_node->number < -2147483648 || newstack_node->number > 2147483647)
-//{
-//	ft_putstr_fd("error\n", 2);
-//	exit (0);
-//}
-
 	return (newstack_node);
 }
 
