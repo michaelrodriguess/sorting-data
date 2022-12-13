@@ -6,10 +6,9 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:32 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/12 17:40:57 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../includes/push_swap.h"
 
@@ -36,5 +35,20 @@ t_stack *ft_build_stack(char **argv)
 		i++;
 	}
 	return (stack_a);
+}
+
+int	ft_stacksize(t_stack *stack)
+{
+	int	count;
+
+	if (stack == NULL)
+		return (0);
+	count = 0;
+	while (stack != NULL)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
 }
 

@@ -6,23 +6,22 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:35:54 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:29:56 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/13 18:53:08 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_swap(t_stack **stack)
+void	ft_swap(t_stack **stack, char c)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
-	int hold_value;
-
-
-	stack_a = *stack;
-	stack_b = (*stack)->next;
-	hold_value = stack_a->number;
-	stack_a->number = stack_b->number;
-	stack_b->number = hold_value;
-
+	t_stack *hold_value;
+	
+	hold_value = *stack;
+	*stack = (*stack)->next;
+	hold_value->next = (*stack)->next;
+	(*stack)->next = hold_value;	
+	if (c == 'a')
+		ft_printf("sa\n");
+	if (c == 'b')
+		ft_printf("sb\n");
 }

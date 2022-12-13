@@ -9,6 +9,8 @@ SRCS			= ./srcs/main.c \
 				  ./srcs/checks/ft_issorted.c \
 				  ./srcs/buildstack/ft_buildstack.c \
 				  ./srcs/buildstack/ft_functions_stack.c \
+				  ./srcs/buildstack/ft_mount_index_stack.c \
+				  ./srcs/algorithms/ft_sort_until_five.c \
 
 
 NAME			= push_swap
@@ -16,7 +18,7 @@ NAME			= push_swap
 OBJS			= $(SRCS:.c=.o)
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -g
+CFLAGS			= -Wall -Wextra -Werror
 
 PRINTF_PATH		= ./ft_printf
 LIBFT_PATH		= ./ft_printf/libft/libft.a
