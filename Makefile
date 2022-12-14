@@ -18,7 +18,7 @@ NAME			= push_swap
 OBJS			= $(SRCS:.c=.o)
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -g
 
 PRINTF_PATH		= ./ft_printf
 LIBFT_PATH		= ./ft_printf/libft/libft.a

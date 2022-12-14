@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:08:49 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/13 19:33:12 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:24:21 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*ft_build_stack(char **argv);
 int		ft_stacksize(t_stack *stack);
 int		ft_issorted(t_stack *stack);
 int		*ft_ordenation_array(int *array_index, int len_array);
-int		get_posix_index(t_stack *stack, int index);
+int		get_posix_index(t_stack **stack, int index);
 void	ft_stackadd_back(t_stack **stack, t_stack *newstack_node);
 void	ft_stackadd_front(t_stack **stack, t_stack *newstack_node);
 void	ft_check_isdigit(char **matriz);
