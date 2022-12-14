@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:42:01 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/14 11:46:57 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:55:56 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int get_posix_index(t_stack **stack, int index)
 	{
 		if (hold_value->index != index)
 			posix_index++;
+		else if (hold_value->index == index)
+			break ;
 		hold_value = hold_value->next;
 	}
 	//com isso tenho a posicao que o index 0 ou 1 esta na stack!
@@ -70,41 +72,38 @@ int get_posix_index(t_stack **stack, int index)
 
 void ft_sort_four_five(t_stack **stack_a, t_stack **stack_b)
 {
-	int index_pushed;
-	
-	index_pushed = 0;
-	while (ft_stacksize(*stack_a) > 3)
+	if (ft_stacksize(*stack_a) == 4)
 	{
-		if ((*stack_a)->index == 0 && index_pushed == 0 )
+		while ((*stack_a)->index != 0)
 		{
-			*stack_b = ft_push(stack_a, stack_b, 'b');
 			if (get_posix_index(stack_a, 0) <= 2)
-			{
-				puts("entro ra");
 				ft_rotate(stack_a, 'a');
-			}
 			else if (get_posix_index(stack_a, 0) >= 3)
-			{
-				puts("entro rra");
-	 			ft_reverse_rotate(stack_a, 'a');	
-			}
-			index_pushed++;
+	 			ft_reverse_rotate(stack_a, 'a');
 		}
-		else if ((*stack_a)->index == 1 && index_pushed == 1) // a verificacao de stack_index for == 1 esta dando loop infinito
+		*stack_b = ft_push(stack_a, stack_b, 'b');
+	}
+	if (ft_stacksize(*stack_a) == 5)
+	{
+		while (ft_stacksize(*stack_a) > 3)
 		{
+			while ((*stack_a)->index != 0)
+			{
+				if (get_posix_index(stack_a, 0) <= 2)
+					ft_rotate(stack_a, 'a');
+				else if (get_posix_index(stack_a, 0) >= 3)
+					ft_reverse_rotate(stack_a, 'a');
+			}
 			*stack_b = ft_push(stack_a, stack_b, 'b');
-			if (get_posix_index(stack_a, 1) <= 2)
+			while ((*stack_a)->index != 1)
 			{
-				puts("entro ra");
-				ft_rotate(stack_a, 'a');
+				if (get_posix_index(stack_a, 1) <= 2)
+					ft_rotate(stack_a, 'a');
+				else if (get_posix_index(stack_a, 1) >= 3)
+					ft_reverse_rotate(stack_a, 'a');
 			}
-			else if (get_posix_index(stack_a, 1) >= 3)
-			{
-				puts("entro rra");
-	 			ft_reverse_rotate(stack_a, 'a');	
-			}
+			*stack_b = ft_push(stack_a, stack_b, 'b');
 		}
-//			ft_rotate(stack_a, 'a');
 	}
 	ft_sort_three(stack_a);
 	while (*stack_b != NULL)

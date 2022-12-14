@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:33:03 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/14 11:38:29 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/14 17:07:51 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int main(int argc, char **argv)
 			ft_sort_two(&stack_a);
 		if (ft_stacksize(stack_len) == 3)
 			ft_sort_three(&stack_a);
-//		if (ft_stacksize(stack_len) >= 5 && ft_stacksize(stack_len) == 4)
-//			ft_sort_four_five(&stack_a, &stack_b);
-		if (argc >= 5 && argc <= 6)
+		if (ft_stacksize(stack_len) >= 4 && ft_stacksize(stack_len) <= 5)
 			ft_sort_four_five(&stack_a, &stack_b);
+//		if (argc >= 5 && argc <= 6)
+//			ft_sort_four_five(&stack_a, &stack_b);
 		
 //		stack_b = ft_push(&stack_a, &stack_b, 'b'); // test push a to b function
 
