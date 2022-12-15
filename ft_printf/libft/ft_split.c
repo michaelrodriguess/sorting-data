@@ -6,7 +6,7 @@
 /*   By: microdri <microdr@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:48:59 by microdri          #+#    #+#             */
-/*   Updated: 2022/05/30 17:04:21 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:41:46 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static int	ft_len_word(char const *s, char sep)
 	return (len_s);
 }
 
+#include <stdio.h>
+
 char	**ft_split(char const *str, char c)
 {
 	char	**matriz;
@@ -64,6 +66,7 @@ char	**ft_split(char const *str, char c)
 	s = (char *) str;
 	count = 0;
 	matriz = malloc((ft_count_word(s, c) + 1) * sizeof(char *));
+	printf("%p\n", matriz);
 	if (!matriz)
 		return (NULL);
 	while (*s)

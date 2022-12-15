@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:41 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/15 19:42:00 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_stack	*ft_stacknew(long n)
 {
 	t_stack	*newstack_node;
 
-	if (n < -2147483648 || n > 2147483647)
-		ft_print_error();
+//	if (n < -2147483648 || n > 2147483647)
+//		ft_print_error();
 	newstack_node = malloc(sizeof(t_stack));
 	if (newstack_node == NULL)
 		return (0);

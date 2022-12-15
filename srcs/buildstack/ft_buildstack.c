@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/12 17:40:57 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/15 19:38:57 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_stack *ft_build_stack(char **argv)
 	char **matriz;
 	int i;
 	int	j;
+	int value_temp;
 
 	i = 0;
 	j = 0;
@@ -26,8 +27,14 @@ t_stack *ft_build_stack(char **argv)
 	{	
 		matriz = ft_split(argv[i], ' ');
 		while (matriz[j])
-		{	
-			ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(matriz[j])));
+		{
+			value_temp = ft_atoi(matriz[j]);
+			if (value_temp < -2147483648 || value_temp > 2147483647)
+			{
+				ft_free_matriz(&matriz);
+				ft_print_error();
+			}
+			ft_stackadd_back(&stack_a, ft_stacknew(value_temp));
 			j++;
 		}
 		ft_free_matriz(&matriz);
