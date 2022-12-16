@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:25:48 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/15 19:30:58 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:00:16 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void ft_check_isdigit(char **matriz)
 			{
 				ft_free_matriz(&matriz);
 				ft_print_error();
-				
 			}
 			j++;
 		}

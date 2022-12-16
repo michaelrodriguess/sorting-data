@@ -6,20 +6,20 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:33:03 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/15 17:59:04 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:27:24 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*void print_stack(t_stack *stack)
+void print_stack(t_stack *stack)
 {
 	while (stack != NULL)
 	{
 		ft_printf("    number: %d, index of stack->number: %d\n", stack->number, stack->index);
 		stack = stack->next;
 	}
-}*/
+}
 
 int main(int argc, char **argv)
 {
@@ -49,15 +49,13 @@ int main(int argc, char **argv)
 			ft_sort_three(&stack_a);
 		if (ft_stacksize(stack_len) >= 4 && ft_stacksize(stack_len) <= 5)
 			ft_sort_four_five(&stack_a, &stack_b);
-//		if (argc >= 5 && argc <= 6)
-//			ft_sort_four_five(&stack_a, &stack_b);
 		
 //		stack_b = ft_push(&stack_a, &stack_b, 'b'); // test push a to b function
 
-//		ft_printf(" STACK A\n");
-//		print_stack(stack_a);
-//		ft_printf(" STACK B\n");
-//		print_stack(stack_b);
+		ft_printf(" STACK A\n");
+		print_stack(stack_a);
+		ft_printf(" STACK B\n");
+		print_stack(stack_b);
 
 		ft_stackclear(&stack_a, &free); // free na stack_a depois de utiliza-la
 	}

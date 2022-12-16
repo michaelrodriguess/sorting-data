@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/15 19:38:57 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:28:05 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack *ft_build_stack(char **argv)
 	stack_a = NULL;
 	while (argv[i])
 	{	
-		matriz = ft_split(argv[i], ' ');
+		matriz = ft_split(argv[i], ' ');	
 		while (matriz[j])
 		{
 			value_temp = ft_atoi(matriz[j]);
