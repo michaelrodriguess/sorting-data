@@ -6,40 +6,37 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:04 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/16 19:28:05 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:52:22 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack *ft_build_stack(char **argv)
+t_stack	*ft_build_stack(char **argv)
 {
-	t_stack *stack_a;
-	char **matriz;
-	int i;
-	int	j;
-	int value_temp;
+	t_stack	*stack_a;
+	char	**mtrz;
+	int		j;
 
-	i = 0;
 	j = 0;
 	stack_a = NULL;
-	while (argv[i])
+	while (*argv)
 	{	
-		matriz = ft_split(argv[i], ' ');	
-		while (matriz[j])
+		mtrz = ft_split(*argv, ' ');
+		while (mtrz[j])
 		{
-			value_temp = ft_atoi(matriz[j]);
-			if (value_temp < -2147483648 || value_temp > 2147483647)
+			if (ft_atoi(mtrz[j]) < -2147483648 || ft_atoi(mtrz[j]) > 2147483647)
 			{
-				ft_free_matriz(&matriz);
+				ft_free_matriz(&mtrz);
+				ft_stackclear(&stack_a, free);
 				ft_print_error();
 			}
-			ft_stackadd_back(&stack_a, ft_stacknew(value_temp));
+			ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(mtrz[j])));
 			j++;
 		}
-		ft_free_matriz(&matriz);
+		ft_free_matriz(&mtrz);
 		j = 0;
-		i++;
+		argv++;
 	}
 	return (stack_a);
 }
@@ -58,4 +55,3 @@ int	ft_stacksize(t_stack *stack)
 	}
 	return (count);
 }
-

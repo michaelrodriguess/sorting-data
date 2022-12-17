@@ -6,13 +6,13 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:26:14 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:15 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:57:43 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_print_error(void)
+void	ft_print_error(void)
 {
 	ft_putstr_fd("error\n", 2);
 	exit(0);

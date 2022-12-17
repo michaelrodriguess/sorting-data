@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:31:53 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/10 15:26:06 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:31:32 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_issorted(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = NULL;
 	while (stack->next != NULL)
@@ -26,8 +26,7 @@ int	ft_issorted(t_stack *stack)
 			stack = stack->next;
 		}
 		else
-			return(0);
+			return (0);
 	}
 	return (1);
 }
-

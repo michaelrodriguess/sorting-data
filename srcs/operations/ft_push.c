@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:32:35 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/12 19:21:45 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:22:40 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_push(t_stack **stack_src, t_stack **stack_dest, char c)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack_src;
 	*stack_src = (*stack_src)->next;
@@ -24,5 +24,5 @@ t_stack	*ft_push(t_stack **stack_src, t_stack **stack_dest, char c)
 		ft_printf("pa\n");
 	if (c == 'b')
 		ft_printf("pb\n");
-	return (*stack_dest); 
+	return (*stack_dest);
 }

@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:24:14 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/13 18:00:18 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:24:48 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_rotate(t_stack **stack, char c)
 {
-	t_stack *hold_value;
-	t_stack *temp_stack;
+	t_stack	*hold_value;
+	t_stack	*temp_stack;
 
 	hold_value = *stack;
 	temp_stack = *stack;

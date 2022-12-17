@@ -6,17 +6,17 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:19:39 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/15 19:42:24 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:40:17 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int *ft_ordenation_array(int *array_index, int len_array)
+int	*ft_ordenation_array(int *array_index, int len_array)
 {
-	int i;
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
 	i = 0;
 	temp = 0;
@@ -40,7 +40,7 @@ int *ft_ordenation_array(int *array_index, int len_array)
 
 void	ft_add_index_stack(t_stack **stack, int *array_index, int len_array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*stack)
@@ -58,11 +58,11 @@ void	ft_add_index_stack(t_stack **stack, int *array_index, int len_array)
 
 void	ft_mount_index_stack(t_stack **stack)
 {
-	t_stack *hold_stack;
-	t_stack *temp;
-	int len_array;
-	int i;
-	int *array_index;
+	t_stack	*hold_stack;
+	t_stack	*temp;
+	int		len_array;
+	int		i;
+	int		*array_index;
 
 	hold_stack = *stack;
 	temp = *stack;
@@ -80,4 +80,3 @@ void	ft_mount_index_stack(t_stack **stack)
 	*stack = hold_stack;
 	free(array_index);
 }
-

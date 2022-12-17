@@ -6,7 +6,7 @@
 /*   By: microdri <microdr@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:49:09 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/16 19:27:07 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 18:13:10 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ static int	ft_isspace(int c)
 		return (1);
 	return (0);
 }
-
-#include <stdio.h>
 
 long	ft_atoi(const char *n)
 {

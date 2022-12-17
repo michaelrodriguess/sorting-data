@@ -6,16 +6,16 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:25:48 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/16 19:00:16 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 19:21:10 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_check_isdigit(char **matriz)
+void	ft_check_isdigit(char **matriz)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (!*matriz)
@@ -24,7 +24,7 @@ void ft_check_isdigit(char **matriz)
 	{
 		j = 0;
 		if (matriz[i][0] == '-' || matriz[i][0] == '+')
-			   j++;
+			j++;
 		while (matriz[i][j] != '\0')
 		{
 			if (!ft_isdigit(matriz[i][j]))
@@ -38,7 +38,7 @@ void ft_check_isdigit(char **matriz)
 	}
 }
 
-void ft_check_only_one_arg(char **argv)
+void	ft_check_only_one_arg(char **argv)
 {
 	char	**matriz;
 	int		i;
@@ -53,9 +53,9 @@ void ft_check_only_one_arg(char **argv)
 	}
 }
 
-void ft_check_duplicate_number(t_stack *stack)
+void	ft_check_duplicate_number(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	while (stack)
 	{
@@ -65,7 +65,6 @@ void ft_check_duplicate_number(t_stack *stack)
 			if (stack->number == temp->number)
 			{
 				ft_stackclear(&stack, free);
-				ft_stackclear(&temp, free);
 				ft_print_error();
 			}
 			temp = temp->next;
@@ -73,4 +72,3 @@ void ft_check_duplicate_number(t_stack *stack)
 		stack = stack->next;
 	}
 }
-

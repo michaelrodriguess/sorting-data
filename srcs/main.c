@@ -6,26 +6,30 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:33:03 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/16 19:27:24 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 19:02:38 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../includes/push_swap.h"
 
-void print_stack(t_stack *stack)
+static void	ft_select_algorithm_sort(t_stack **stack_a, t_stack **stack_b, t_stack *stack_len)
 {
-	while (stack != NULL)
-	{
-		ft_printf("    number: %d, index of stack->number: %d\n", stack->number, stack->index);
-		stack = stack->next;
-	}
+	if (ft_stacksize(stack_len) == 2)
+		ft_sort_two(stack_a);
+	if (ft_stacksize(stack_len) == 3)
+		ft_sort_three(stack_a);
+	if (ft_stacksize(stack_len) == 4)
+		ft_sort_four(stack_a, stack_b);
+	if (ft_stacksize(stack_len) == 5)
+		ft_sort_five(stack_a, stack_b);
+	if (ft_stacksize(stack_len) > 5)
+		ft_radix(stack_a, stack_b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
-	t_stack *stack_len;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack	*stack_len;
 
 	stack_len = NULL;
 	stack_b = NULL;
@@ -35,30 +39,14 @@ int main(int argc, char **argv)
 		stack_a = ft_build_stack(argv);
 		ft_check_duplicate_number(stack_a);
 		stack_len = stack_a;
-
 		if (ft_issorted(stack_a) == 1)
 		{
-			ft_stackclear(&stack_a, free); // free na stack_a depois de utiliza-la
-			ft_printf("Stack ja Ordenada\n");
+			ft_stackclear(&stack_a, free);
 			exit(0);
 		}
-		ft_mount_index_stack(&stack_a); // montar os index para fazer as possiveis ordenacoes!
-		if (ft_stacksize(stack_len) == 2)
-			ft_sort_two(&stack_a);
-		if (ft_stacksize(stack_len) == 3)
-			ft_sort_three(&stack_a);
-		if (ft_stacksize(stack_len) >= 4 && ft_stacksize(stack_len) <= 5)
-			ft_sort_four_five(&stack_a, &stack_b);
-		
-//		stack_b = ft_push(&stack_a, &stack_b, 'b'); // test push a to b function
-
-		ft_printf(" STACK A\n");
-		print_stack(stack_a);
-		ft_printf(" STACK B\n");
-		print_stack(stack_b);
-
-		ft_stackclear(&stack_a, &free); // free na stack_a depois de utiliza-la
+		ft_mount_index_stack(&stack_a);
+		ft_select_algorithm_sort(&stack_a, &stack_b, stack_len);
+		ft_stackclear(&stack_a, &free);
 	}
 	exit(0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:08:49 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/15 17:37:05 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/17 18:28:47 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 # define PUSH_SWAP_H
 
 # include "../ft_printf/ft_printf.h"
-# include <stdio.h>
 
 typedef struct s_stack
 {
-	int number;
-	int index;
-	struct s_stack *next;
+	int				number;
+	int				index;
+	struct s_stack	*next;
 }	t_stack;
 
-t_stack *ft_stacklast(t_stack *stack);
-t_stack *ft_stacknew(long number);
+t_stack	*ft_stacklast(t_stack *stack);
+t_stack	*ft_stacknew(long number);
 t_stack	*ft_push(t_stack **stack_src, t_stack **stack_dest, char c);
 t_stack	*ft_build_stack(char **argv);
 int		ft_stacksize(t_stack *stack);
@@ -46,7 +45,8 @@ void	ft_mount_index_stack(t_stack **stack);
 void	ft_add_index_stack(t_stack **stack, int *array_index, int len_array);
 void	ft_sort_three(t_stack **stack);
 void	ft_sort_two(t_stack **stack);
-void	ft_sort_four_five(t_stack **stack_a, t_stack **stack_b);
-
+void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+void	ft_radix(t_stack **stack_a, t_stack **stack_b);
 
 #endif
