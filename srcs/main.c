@@ -6,23 +6,23 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:33:03 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/17 19:02:38 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:35:26 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-static void	ft_select_algorithm_sort(t_stack **stack_a, t_stack **stack_b, t_stack *stack_len)
+void	ft_select_sort(t_stack **stck_a, t_stack **stck_b, t_stack *stack_len)
 {
 	if (ft_stacksize(stack_len) == 2)
-		ft_sort_two(stack_a);
+		ft_sort_two(stck_a);
 	if (ft_stacksize(stack_len) == 3)
-		ft_sort_three(stack_a);
+		ft_sort_three(stck_a);
 	if (ft_stacksize(stack_len) == 4)
-		ft_sort_four(stack_a, stack_b);
+		ft_sort_four(stck_a, stck_b);
 	if (ft_stacksize(stack_len) == 5)
-		ft_sort_five(stack_a, stack_b);
+		ft_sort_five(stck_a, stck_b);
 	if (ft_stacksize(stack_len) > 5)
-		ft_radix(stack_a, stack_b);
+		ft_radix(stck_a, stck_b);
 }
 
 int	main(int argc, char **argv)
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 			exit(0);
 		}
 		ft_mount_index_stack(&stack_a);
-		ft_select_algorithm_sort(&stack_a, &stack_b, stack_len);
+		ft_select_sort(&stack_a, &stack_b, stack_len);
 		ft_stackclear(&stack_a, &free);
 	}
 	exit(0);

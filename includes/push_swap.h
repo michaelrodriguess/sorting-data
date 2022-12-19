@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:08:49 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/17 18:28:47 by microdri         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:34:30 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	ft_sort_two(t_stack **stack);
 void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);
+void	ft_select_sort(t_stack **a, t_stack **b, t_stack *stack_len);
 
 #endif
